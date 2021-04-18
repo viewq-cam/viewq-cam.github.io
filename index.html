@@ -34,6 +34,8 @@
         .then(convertBlobToBase64)
         .then(base64 => {
           document.getElementById('livedemoimg').src = base64;
+        }).catch(err => {
+          document.getElementById('livedemoimg').src = "http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888";
         });
       // fetch('http://cors-anywhere.herokuapp.com/http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&user=public&password=4434888', {mode: 'cors'})
       // .then(response => response.blob())
@@ -124,7 +126,7 @@
             <div class="pl-1" id="currentTime"></div>
           </div>
           <div class="badges">
-            <img id="livedemoimg" class="live-demo-img" src="" />
+            <img id="livedemoimg" class="live-demo-img" src="https://104.246.154.190:443/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888" />
             <!-- <img class="live-demo-img" src="https://104.246.154.190:443/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888" /> -->
           </div>
         </div>
