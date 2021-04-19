@@ -25,21 +25,27 @@
   <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
 
   <!-- Custom styles for this template -->
-  <link href="css/new-age.min.css" rel="stylesheet">
+  <link href="css/new-age.min.css" rel="stylesheet"> 
   <script>
     window.onload = function(){
       var curTime = new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString();
       document.getElementById("currentTime").innerText = 'from ' + curTime + '';
       fetchAsBlob(`https://cors-proxy-emily.herokuapp.com/http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888`)
-        .then(convertBlobToBase64)
-        .then(base64 => {
-          document.getElementById('livedemoimg').src = base64;
+         
+        .then(blob => {
+          document.getElementById('livedemoimg').src = URL.createObjectURL(blob);
+          document.getElementById('demospinner').style.display = "none"
         }).catch(err => {
           document.getElementById('livedemoimg').src = "http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888";
-        });
-      // fetch('http://cors-anywhere.herokuapp.com/http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&user=public&password=4434888', {mode: 'cors'})
-      // .then(response => response.blob())
-      // .then(data => console.log(data));
+        }); 
+
+        // fetchAsBlob(`https://cors-proxy-emily.herokuapp.com/http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888`)
+        // .then(convertBlobToBase64)
+        // .then(base64 => {
+        //   document.getElementById('livedemoimg').src = base64;
+        // }).catch(err => {
+        //   document.getElementById('livedemoimg').src = "http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888";
+        // }); 
     }
 
     function fetchAsBlob(url){
@@ -126,7 +132,9 @@
             <div class="pl-1" id="currentTime"></div>
           </div>
           <div class="badges">
-            <img id="livedemoimg" class="live-demo-img" src="https://104.246.154.190:443/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888" />
+            <div id="demospinner" class="spinner-border text-primary"></div> 
+            <!-- <img id="livedemoimg" class="live-demo-img" src="https://104.246.154.190:443/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888" /> -->
+            <img id="livedemoimg" class="live-demo-img" src="" />
             <!-- <img class="live-demo-img" src="https://104.246.154.190:443/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888" /> -->
           </div>
         </div>
