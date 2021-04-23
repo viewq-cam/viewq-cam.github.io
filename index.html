@@ -38,14 +38,6 @@
         }).catch(err => {
           document.getElementById('livedemoimg').src = "http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888";
         }); 
-
-        // fetchAsBlob(`https://cors-proxy-emily.herokuapp.com/http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888`)
-        // .then(convertBlobToBase64)
-        // .then(base64 => {
-        //   document.getElementById('livedemoimg').src = base64;
-        // }).catch(err => {
-        //   document.getElementById('livedemoimg').src = "http://104.246.154.190/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888";
-        // }); 
     }
 
     function fetchAsBlob(url){
@@ -126,9 +118,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-8 mx-auto">
-          <h2 class="section-heading">Discover what all the buzz is about!</h2>
+          <h2 class="section-heading">Your Business</h2>
+          <div class="my-1 pl-1 d-flex justify-content-center demo-data">
+            <div class="font-weight-bold pr-2">Location:</div>
+            <div>1060 Manhattan Dr, Kelowna, BC</div>
+          </div> 
         
-          <div class="camera-date mb-3">Live Camera Image
+          <div class="camera-date mb-3 demo-data">Live Queue Image
             <div class="pl-1" id="currentTime"></div>
           </div>
           <div class="badges">
@@ -137,6 +133,50 @@
             <img id="livedemoimg" class="live-demo-img" src="" />
             <!-- <img class="live-demo-img" src="https://104.246.154.190:443/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888" /> -->
           </div>
+          <div class="row mt-4">
+            <div
+             class="col-sm-12 col-md-4"> 
+             <div class="d-flex justify-content-start align-items-center flex-column demo-data">
+              <div class="font-weight-bold pr-2 font-bigger">Avoid the queue</div>  
+              <ul class="text-center" style="width:fit-content">
+                <li class="text-left"><a href="#demo">Book a drop-off</a></li>
+                <li class="text-left"><a href="#demo">Click & collect</a></li>
+                <li class="text-left" ><a href="#demo">Make an appointment</a></li>
+              </ul>
+            </div> 
+            </div>
+            <div
+             class="col-sm-12 col-md-4"> 
+             <div class="d-flex justify-content-start align-items-center flex-column demo-data">
+              <div class="font-weight-bold pr-2 font-bigger">Visit our other locations...</div>  
+              <ul class="text-center" style="width:fit-content">
+                <li class="text-left"><a   class="pr-2" href="#demo">Penticton</a></li>
+                <li class="text-left"><a   class="pr-2" href="#demo">Vernon</a></li>
+                <li class="text-left"><a  class="pr-2" href="#demo">Osoyoos</a></li>
+              </ul>
+            </div> 
+            </div>
+            <div
+             class="col-sm-12 col-md-4"> 
+             <div class="d-flex justify-content-center demo-data">
+              <table>
+                <tr><th>Sunday</th><td>Closed</td></tr>
+                <tr><th>Monday</th><td>9am - 5pm</td></tr>
+                <tr><th>Tuesday</th><td>9am - 5pm</td></tr>
+                <tr><th>Wednesday</th><td>9am - 5pm</td></tr>
+                <tr><th>Thursday</th><td>9am - 5pm</td></tr>
+                <tr><th>Friday</th><td>9am - 5pm</td></tr>
+                <tr><th>Saturday</th><td>Closed</td></tr>
+              </table> 
+            </div> 
+           
+            </div>
+
+          </div>
+         
+         
+         
+
         </div>
       </div>
     </div>
@@ -221,7 +261,7 @@
         <i class="fas fa-heart"></i>
         new friends!</h2>
       <ul class="list-inline list-social">
-        <li class="list-inline-item social-twitter">
+        <!-- <li class="list-inline-item social-twitter">
           <a href="#">
             <i class="fab fa-twitter"></i>
           </a>
@@ -235,7 +275,7 @@
           <a href="#">
             <i class="fab fa-google-plus-g"></i>
           </a>
-        </li>
+        </li> -->
         <li class="list-inline-item social-google-plus">
           <a href="mailto:viewq.cam@gmail.com">
             <i class="far fa-envelope"></i>

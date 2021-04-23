@@ -10,6 +10,12 @@ body {
   height: 100%;
 }
 
+th {
+  text-align: right;
+  padding-right: 8px;
+  font-weight: 900;
+}
+
 body {
   font-family: 'Muli', 'Helvetica', 'Arial', 'sans-serif';
 }
@@ -40,9 +46,13 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Arial', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
+}
+
+li {
+  line-height: 2rem;
 }
 
 p {
@@ -59,18 +69,26 @@ section h2 {
   font-size: 50px;
 }
 
+a, ::marker {
+  color: #7b4397;
+}
+
+.demo-data {
+  font-family: 'Helvetica';
+}
+
 #mainNav {
   border-color: rgba(34, 34, 34, 0.05);
   background-color: white;
   transition: all .35s;
-  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Arial', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
 }
 
 #mainNav .navbar-brand {
   color: #fdcc52;
-  font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+  font-family: 'Arial', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 200;
   letter-spacing: 1px;
 }

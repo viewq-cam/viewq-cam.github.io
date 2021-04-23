@@ -4,7 +4,11 @@ body {
     width: 100%;
     height: 100%;
 }
-
+th {
+    text-align: right; 
+    padding-right: 8px;
+    font-weight: 900; 
+  }
 body {
     @include body-font;
 }
@@ -38,6 +42,10 @@ h6 {
     @include heading-font;
 }
 
+li{
+    line-height: 2rem;
+}
+
 p {
     font-size: 18px;
     line-height: 1.5;
@@ -49,4 +57,11 @@ section {
     h2 {
         font-size: 50px;
     }
+}
+a, ::marker {
+    color:#7b4397
+}
+
+.demo-data{
+    font-family: 'Helvetica'
 }
