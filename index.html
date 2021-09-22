@@ -30,13 +30,13 @@
     window.onload = function(){
       var curTime = new Date().toLocaleDateString() + ' ' + new Date().toLocaleTimeString();
       document.getElementById("currentTime").innerText = 'from ' + curTime + '';
-      fetchAsBlob(`https://cors-proxy-emily.herokuapp.com/http://cam.viewq.tech/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888`)
-         
+      fetchAsBlob(`https://cors-proxy-emily.herokuapp.com/http://cam.viewq.tech:81/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888`)
+
         .then(blob => {
           document.getElementById('livedemoimg').src = URL.createObjectURL(blob);
           document.getElementById('demospinner').style.display = "none"
         }).catch(err => {
-          document.getElementById('livedemoimg').src = "http://cam.viewq.tech/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888";
+          document.getElementById('livedemoimg').src = "http://cam.viewq.tech:81/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888";
         }); 
     }
 
@@ -130,7 +130,7 @@
           <div class="badges">
             <div id="demospinner" class="spinner-border text-primary"></div> 
             <!-- <img id="livedemoimg" class="live-demo-img" src="https://128.189.118.237:443/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888" /> -->
-            <img id="livedemoimg" class="live-demo-img" src="" />
+            <img id="livedemoimg" class="live-demo-img" src="" alt="Camera is disconnected" />
             <!-- <img class="live-demo-img" src="https://128.189.118.237:443/cgi-bin/api.cgi?cmd=Snap&channel=0&rs=wuuPhkmUCeI9WG7C&user=public&password=4434888" /> -->
           </div>
           <div class="row mt-4">
